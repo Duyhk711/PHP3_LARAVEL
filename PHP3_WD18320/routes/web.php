@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SanPhamController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,24 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// tạo route để trỏ đến view
+
+
+// Route::view('/hello', 'xinchao');
+
+// truyền dữ liệu sang view 
+
+// Route::get('/hello', function () {
+//     $title = "PHP3";
+//     $text = "WD18320";
+//     return view('xinchao', ['title' => $title, 'text' => $text]);
+// });
+
+// Route::view('/hello', 'xinchao', [
+//     'title'=> 'PHP3',
+//     'text' => 'WD18320'
+// ]);
+
+// tạo 1 route để trỏ đến hàm trong controller
+Route::get('/san_pham', [SanPhamController::class, 'index']);
