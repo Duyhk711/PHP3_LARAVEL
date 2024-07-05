@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KhachHangController;
 use App\Http\Controllers\SanPhamController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,3 +39,6 @@ Route::get('/', function () {
 
 // tạo 1 route để trỏ đến hàm trong controller
 Route::get('/san_pham', [SanPhamController::class, 'index']);
+Route::get('/danhsachKhachhang', [KhachHangController::class, 'index']);
+Route::get('/themKhachhang', [KhachHangController::class, 'add']);
+Route::get('/suaKhachhang', [KhachHangController::class, 'edit']);
